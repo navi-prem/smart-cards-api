@@ -8,6 +8,8 @@ const app = express()
 
 app.use(cors(), bodyParser.json())
 
+app.get('/', (_, res) => { return res.json({ "Hello": "There" }) })
+
 app.post('/create-order', async (req, res) => {
 
     const { storeId, order, amount } = req.body
